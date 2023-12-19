@@ -19,7 +19,7 @@ namespace SecurityApi.WebApp.Controllers
 
         [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody]AuthRequest request) 
+        public async Task<IActionResult> Login([FromBody] AuthRequest request)
         {
             try
             {
@@ -34,6 +34,13 @@ namespace SecurityApi.WebApp.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetUser() 
+        {
+            return Ok();
         }
     }
 }

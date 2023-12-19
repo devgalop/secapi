@@ -19,6 +19,7 @@ namespace SecurityApi.Core.Security.Extensions
 
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IJwtFactoryService, JwtFactoryService>();
+            services.AddTransient<IUserService, UserService>();
             services.AddAuthorization();
             services.AddAuthentication("Bearer")
                 .AddJwtBearer(opt =>
