@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SecurityApi.Core.Security.Attributes;
 using SecurityApi.Core.Security.Domain;
 using SecurityApi.Core.Security.Interfaces;
 
@@ -37,7 +38,7 @@ namespace SecurityApi.WebApp.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [AuthorizeUser]
         public async Task<IActionResult> GetUser() 
         {
             return Ok();
